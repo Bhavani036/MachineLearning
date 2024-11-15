@@ -11,7 +11,7 @@ model_url="https://raw.githubusercontent.com/Bhavani036/MachineLearning/master/m
 response = requests.get(model_url,stream=True)
 response.raise_for_status()
 
-model = pickle.load(response.content)
+model = pickle.loads(response.content)
 
 
 def predict_house_price(area, bathrooms, age):
